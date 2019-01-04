@@ -14,7 +14,32 @@
 
 // ++ YOUR CODE below
 
+function hasComplements(n, array) {
 
+  for (var i = 0; i < array.length; i ++) {
+    //Evaluamos cada posibilidad de suma en nuestro array
+    if (array[i] + array[i + 1] === n) {
+      return true
+    }
+    if (array[i] + array[i + 2] === n ) {
+      return true
+    }
+    if (array[i] + array[i + 3] === n ) {
+      return true
+    }
+    if (array[i] + array[i + 4] === n ) {
+      return true
+    }
+    if (array[i] + array[i + 5] === n ) {
+      return true
+    }
+    if (array[i] + array[i + 6] === n ) {
+      return true
+    }
+    //También debemos de retornar false si no cumple las condiciones
+    return false
+  }
+}
 
 
 

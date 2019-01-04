@@ -11,9 +11,24 @@
  *    sumDigits(406) => 10
  **/
 
- // ++ YOUR CODE below
+ // ++ YOUR CODE below 123
 
+function sumDigits(number) {
 
+  //Separamos cada numero volviendolo string
+  var sNumber = number.toString();
+
+  //Metemos cada número en un array
+  var suma = sNumber.split("")
+  //Creamos una variable para ir sumando cada número
+  var result = 0;
+
+  for (var i = 0; i < suma.length; i ++) {
+    //
+    result += parseInt(suma[i])
+  }
+  return result;
+}
 
 
 

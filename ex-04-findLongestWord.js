@@ -8,10 +8,34 @@
 
 // ++ YOUR CODE below I have baskets full of lemons
 
-function findLongestWord(string) {
-  for (var i = 0; i < string.length; i++) {
-    var word = string.slice(i," ");
+function findLongestWord(str) {
+  //Convertimos nuestro string en array
+  var words = str.split(" ")
+  //Declaramos la variable que se retornara al final(debe de ser con la longitud más grande)
+  var longestWord = ""
+  //Primera iteración (por palabra)
+  for (var i = 0; i < words.length; i++){
+    //Segunda iteración (por letra)
+    for(var j = 0; j < words[i].length; j++){
+      if(words[i][j] === "'" ){
+        //Si la letra es comilla simple la usamos para separar la palabra
+        var newWord = words[i].split("'")
+        //Unimos de nuevo el string sin la comilla simple
+        words[i] = newWord.join('')
+        console.log(words)
+      } else if (words[i][j] === "."){
+        //Si la letra es punto la usamos para separar la palabra
+        var newWord = words[i].split("'")
+        //Unimos de nuevo el string sin la comilla simple
+        words[i] = newWord.join('')
+      }
+    }
+    //Comparamos cada palabra con la anterior, si es mayor se guarda en longest word 
+    if(words[i].length > longestWord.length){
+      longestWord = words[i]
+    }
   }
+  return longestWord
 }
 
 
